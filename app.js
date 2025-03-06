@@ -2,20 +2,35 @@
 
 let amigos = []
 
+function recorrerLista (){
+    
+    let lista = document.getElementById("listaAmigos");
+    i = 0;
+
+    for(i in amigos){
+        lista.innerHTML = amigos[i]
+        i++
+    }
+}
+
+
 function agregarAmigo(){
     
     let nombre = document.getElementById("amigo").value;
     
     if (nombre === "") {
         alert("Por favor, inserte un nombre.");
+    } else if (amigos.includes(nombre)){
+        alert("Este nombre ya ha sido ingresado.");
+        document.getElementById("amigo").value = "";
     } else {
         amigos.push(nombre);
         document.getElementById("amigo").value = "";
+        recorrerLista();
     }
 }
 
-function recorrerLista (){
-
-    let lista = document.getElementById("listaAmigos")
-    
+function sortearAmigo(){
+    let amigoSorteado = document.getElementById("resultado");
+    amigoSorteado.innerHTML = `El amigo sorteado fue: ${amigos[0]}`;
 }
