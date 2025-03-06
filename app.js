@@ -12,6 +12,7 @@ function recorrerLista (){
         let elemento = document.createElement("li")
         elemento.innerHTML = amigos[i];
         lista.appendChild(elemento)
+        console.log(amigos.length);
     }
 }
 
@@ -33,10 +34,12 @@ function agregarAmigo(){
 }
 
 function sortearAmigo(){
+    
     let amigoSorteado = document.getElementById("resultado");
-    amigoSorteado.innerHTML = `El amigo sorteado fue: ${amigos[]}`;
-}
 
-function reiniciarSorteo(){
-
+    if (amigos.length <= 1){
+        alert("Debe agregar 2 nombres o mas para poder realizar el sorteo.")
+    } else{
+        amigoSorteado.innerHTML = `El amigo sorteado fue: ${amigos[Math.floor(Math.random()*(amigos.length)+1)]}`;
+    }
 }
