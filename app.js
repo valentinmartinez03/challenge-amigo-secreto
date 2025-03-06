@@ -3,12 +3,17 @@
 let amigos = []
 
 function agregarAmigo(){
-    nombre = document.getElementById(`amigo`).value;
+    let nombre = document.getElementById("amigo").value;
     console.log(nombre);
     if (nombre === "") {
-        alert(`Por favor, inserte un nombre`);
-    } else{
+        alert("Por favor, inserte un nombre.");
+    } else if (nombre === Number){
+        alert("Por favor, inserte un nombre valido.")
+    } else if(nombre in amigos){
+        alert("Este nombre ya ha sido ingresado.")
+    }
+    else {
         amigos.push(nombre);
-        nombre = "";
+        document.getElementById("amigo").value = "";
     }
 }
