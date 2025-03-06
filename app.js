@@ -13,3 +13,9 @@ function agregarAmigo(){
         document.getElementById("amigo").value = "";
     }
 }
+
+function recorrerLista (){
+
+    let lista = document.getElementById("listaAmigos")
+    
+}
