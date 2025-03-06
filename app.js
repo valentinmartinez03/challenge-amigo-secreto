@@ -12,7 +12,6 @@ function recorrerLista (){
         let elemento = document.createElement("li")
         elemento.innerHTML = amigos[i];
         lista.appendChild(elemento)
-        console.log(amigos.length);
     }
 }
 
