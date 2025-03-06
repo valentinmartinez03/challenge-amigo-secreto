@@ -5,11 +5,13 @@ let amigos = []
 function recorrerLista (){
     
     let lista = document.getElementById("listaAmigos");
+    lista.innerHTML = ""
     i = 0;
 
     for(i in amigos){
-        lista.innerHTML = amigos[i]
-        i++
+        let elemento = document.createElement("li")
+        elemento.innerHTML = amigos[i];
+        lista.appendChild(elemento)
     }
 }
 
@@ -32,5 +34,9 @@ function agregarAmigo(){
 
 function sortearAmigo(){
     let amigoSorteado = document.getElementById("resultado");
-    amigoSorteado.innerHTML = `El amigo sorteado fue: ${amigos[0]}`;
+    amigoSorteado.innerHTML = `El amigo sorteado fue: ${amigos[]}`;
+}
+
+function reiniciarSorteo(){
+
 }
